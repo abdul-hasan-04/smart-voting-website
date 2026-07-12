@@ -9,6 +9,10 @@ import {currentUser} from "./js/auth.js";
 
 let profileCard = document.querySelector(".profile-card");
 
+
+document.addEventListener("DOMContentLoaded", userProfileUi);
+
+
 const userProfileUi = () => {
     if(currentUser()) {
        document.querySelector(".toggle-user-active").innerHTML = `<i class="fa-solid fa-circle-user" id="user-icon"></i>`;
