@@ -13,7 +13,7 @@ let authBtns = document.querySelector(".toggle-user-active");
 
 const userProfileUi = () => {
  if (currentUser()) {
-    userIcon.classList.add("active");
+    userIcon.classList.toggle("active");
     authBtns.classList.remove("show");
 } else {
     userIcon.classList.remove("active");
@@ -39,12 +39,14 @@ document.querySelector(".profile-card").classList.toggle("active");
     </div>
     
     <div class="divider"></div>
+    <div class ="dashboard-link">
     <ul class="menu">
     <li>
     <i class="fa-solid fa-table-cells-large"></i>
-    <a href ="${currentUser().role === "admin" ? "./pages/admin.html" : "./pages/dashboard.html"}"><span>Dashboard</span></a>
+    <a<span>Dashboard</span></a>
     </li>
     </ul>
+    </div>
     
     <div class="divider"></div>
     
@@ -59,22 +61,24 @@ document.querySelector(".profile-card").classList.toggle("active");
 
 window.onclick = (e) => {
   let logoutBtn = e.target.closest(".logout-btn");
-  let userIcon = document.querySelector("#user-icon");
   let menu = document.querySelector(".menu");
   
   if(logoutBtn) {
     sessionStorage.removeItem("currentUser");
       userProfileUi();
+      profileCard.classList.remove("active");
     }
     
 
-    if(userIcon){
+    if(e.target == userIcon){
       document.body.classList.toggle("hide-scroll");
       displayProfileCard();
     }
 
-    if(menu){
+
+    if(e.target.closest(".dashboard-link")){
       location.href = `${currentUser().role === "admin" ? "./pages/admin.html" : "./pages/dashboard.html"}`;
+      profileCard.classList.remove("active");
     }
 
 

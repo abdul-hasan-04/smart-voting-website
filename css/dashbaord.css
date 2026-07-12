@@ -341,7 +341,7 @@ h1{
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: #ff1a1a;
+  background-color: #1B4EF5;
   border-radius: 50%;
   opacity: 0.7;
   z-index: 1111;
@@ -357,7 +357,7 @@ h1{
     0%{
         transform:scale(1);
         box-shadow:
-            0 0 0 0 rgba(234, 9, 16, 0.942);
+            0 0 0 0 #1B4EF5;;
     }
 
     70%{
