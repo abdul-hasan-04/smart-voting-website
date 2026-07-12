@@ -4,6 +4,76 @@
 // =========================================
 
 // ---- Mobile menu toggle ----
+
+import {currentUser} from "./js/auth.js";
+
+let profileCard = document.querySelector(".profile-card");
+
+const userProfileUi = () => {
+    if(currentUser()) {
+       document.querySelector(".toggle-user-active").innerHTML = `<i class="fa-solid fa-circle-user" id="user-icon"></i>`;
+       profileCard.innerHTML = `
+       <div class="profile-header">
+      <i class="fa-solid fa-user"></i>
+        <div class="profile-info">
+            <h3>${currentUser().name}</h3>
+            <p>${currentUser().email}</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    <ul class="menu">
+        <li>
+            <i class="fa-solid fa-table-cells-large"></i>
+            <a href ="${currentUser().role === "admin" ? "./pages/admin.html" : "./pages/dashboard.html"}"><span>Dashboard</span></a>
+        </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <button class="logout-btn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span>Log out</span>
+    </button>
+       
+       
+       `
+    }else{
+      document.querySelector(".toggle-user-active").innerHTML = `
+      <a href="./pages/login.html" class="btn btn-secondary btn-sm">Log in</a>
+      <a href="./pages/register.html" class="btn btn-primary btn-sm">Register</a>
+      `
+    }
+}
+
+
+
+userProfileUi();
+
+
+
+
+
+window.onclick = (e) => {
+  let logoutBtn = e.target.closest(".logout-btn");
+  let userIcon = document.querySelector("#user-icon");
+
+  if(logoutBtn) {
+      sessionStorage.removeItem("currentUser");
+      userProfileUi();
+  }
+
+  if(userIcon){
+    if(userIcon){
+     document.body.classList.toggle("hide-scroll");
+     document.querySelector(".profile-card").classList.toggle("active");
+    }
+  }
+}
+
+
+
+
 var navToggle = document.querySelector('.nav-toggle');
 var navLinks = document.querySelector('.nav-links');
 
@@ -12,6 +82,7 @@ if (navToggle) {
     navLinks.classList.toggle('open');
   });
 }
+
 
 // ---- Fade-in elements when they scroll into view ----
 var revealItems = document.querySelectorAll('.reveal');
@@ -164,3 +235,5 @@ demoForms.forEach(function (form) {
     e.preventDefault();
   });
 });
+
+

@@ -14,10 +14,6 @@ let userProfilecontainer = document.querySelector(".user-profile");
 let electionsContainerParent = document.querySelector(".electionList-container");
 
 
-
-
-
-
 userIcon.addEventListener("click", () => {
     document.querySelector(".user-detailed-info").classList.toggle("active");
 });
@@ -34,15 +30,7 @@ userProfilecontainer.addEventListener("click", (e) =>{
 const createUserInfo = liveUserData => {
     let userDetailedElement = document.querySelector(".user-detailed-info");
     userDetailedElement.innerHTML = `
-     <div class="email-section">
-        <i class="fa-solid fa-circle-user"></i>
-        <span class="email">${liveUserData.name.toUpperCase()}</span>
-    </div>
-    <span class="role">Role: <strong>${liveUserData.role}</strong></span>
-    <div class ="logout-container">
-    <i class="fa-solid fa-arrow-right-from-bracket" id="logoutIcon"></i>
-    <span>Logout</span>
-    </div>
+    
     
     `
 }

@@ -1058,9 +1058,7 @@ h1, h2, h3, h4 {
     padding: 12px 0;
     border-bottom: 1px solid #f1f1f2;
   }
-  .nav-toggle {
-    display: flex;
-  }
+  
   .feature-grid,
   .steps {
     grid-template-columns: 1fr;

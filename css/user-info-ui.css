@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap');
+
+/* ---- Basic reset ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #171719;
+  background-color: #ffffff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+i {
+    cursor: pointer;
+}
+body.hide-scroll {
+    overflow-y: hidden;
+}
+
+
+
+
+.fa-solid.fa-circle-user{
+    font-size: 1.5rem;
+}
+.profile-card{
+    width:370px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    overflow:hidden;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #e2dede;
+    max-width: 350px;
+    opacity:0;
+    visibility:hidden;
+    transition: opacity .1s ease, transform .1s ease;
+}
+
+
+.profile-card.active{
+    visibility: visible;
+    opacity: 1;
+}
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap: 2rem;
+    padding:24px;
+}
+
+
+.profile-info h3{
+    color:#222;
+    margin-bottom:6px;
+    font-weight:700;
+}
+
+.profile-info p{
+    color:#777;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:220px;
+}
+
+.divider{
+    height:1px;
+    background:#ececec;
+}
+
+.menu{
+    list-style:none;
+    padding:12px 0;
+}
+
+.menu li{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:18px 28px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu li:hover{
+    background:#f8f8f8;
+}
+
+.menu li i{
+    width:24px;
+    text-align:center;
+    color:#666;
+    font-size:21px;
+}
+
+.menu li span{
+    font-size:14px;
+    color:#222;
+}
+
+.logout-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:22px 28px;
+    border:none;
+    background:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.logout-btn:hover{
+    background:#fff3f3;
+    color:#e53935;
+}
+
+.logout-btn:hover i,
+.logout-btn:hover span{
+    color:#e53935;
+}
+
+.logout-btn i{
+    width:24px;
+    text-align:center;
+    font-size:22px;
+    color:#666;
+}
+
+.logout-btn span{
+    font-size:14px;
+    color:#666;
+}
+
+@media screen and (min-width:768px) {
+    .profile-card{
+        left: 70%;
+    }
+}
+
+
