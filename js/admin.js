@@ -7,6 +7,10 @@ import { getAllVotes } from "./votes.js";
 
 // select all dom elements on admin.html //
 
+if (!currentUser() || currentUser().role !== "admin") {
+    window.location.replace("login.html");
+}
+
 let electionCreationBtn = document.querySelector(".create-election-btn");
 let overlay = document.querySelector(".overlay");
 let model = document.querySelector(".modal");
@@ -71,9 +75,6 @@ let currentLiveUser = currentUser();
 let userProfilecontainer = document.querySelector(".user-profile");
 let userInfoElement = document.querySelector(".user-detailed-info");
 
-if (!currentLiveUser || currentLiveUser.role !== "admin") {
-    window.location.replace("login.html");
-}
 
 let userIcon = document.querySelector("#user-icon");
 const electionTitleEl = document.querySelector("#election-title");
