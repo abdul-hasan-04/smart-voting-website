@@ -10,7 +10,9 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     login(email.value, password.value);
     let liveUser = currentUser();
-    location.href = liveUser.role === "admin" ? "admin.html" : "dashboard.html";
+    if(liveUser){
+        location.href = liveUser.role === "admin" ? "admin.html" : "dashboard.html";
+    }
 })
 
 
