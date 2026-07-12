@@ -72,7 +72,7 @@ let userProfilecontainer = document.querySelector(".user-profile");
 let userInfoElement = document.querySelector(".user-detailed-info");
 
 if (!currentLiveUser || currentLiveUser.role !== "admin") {
-    window.location.href = "login.html";
+   location.replace(".login.html");
 }
 
 let userIcon = document.querySelector("#user-icon");
