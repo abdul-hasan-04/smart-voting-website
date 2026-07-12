@@ -71,8 +71,9 @@ let currentLiveUser = currentUser();
 let userProfilecontainer = document.querySelector(".user-profile");
 let userInfoElement = document.querySelector(".user-detailed-info");
 
-if(!currentLiveUser) location.href = "login.html";
-currentLiveUser.role == "user" ? (location.href = "dashboard.html") : "";
+if (!currentLiveUser || currentLiveUser.role !== "admin") {
+    window.location.href = "login.html";
+}
 
 let userIcon = document.querySelector("#user-icon");
 const electionTitleEl = document.querySelector("#election-title");
