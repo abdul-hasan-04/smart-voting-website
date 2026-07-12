@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap');
+
+/* ---- Basic reset ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+:root {
+ 
+  /* ---- Fonts ---- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+ 
+  /* ---- Color: text ---- */
+  --color-text:        #171719; /* near black */
+  --color-text-muted:  #64646d;
+  --color-text-faint:  #9b9ba1; /* muted text on dark backgrounds */
+ 
+  /* ---- Color: surfaces ---- */
+  --color-bg:        #ffffff;
+  --color-bg-soft:   #fafafa; /* mockup header, stats section */
+  --color-bg-alt:    #f1f1f2; /* bar tracks, icon boxes */
+  --color-dark:      #0d0d10; 
+   --glass-bg:       rgba(56, 66, 252, 0.948);
+ 
+  /* ---- Color: borders ---- */
+  --color-border:       #e4e4e7;
+  --color-border-dark:  #26262c; /* borders sitting on --color-dark */
+  --color-border-outline-on-dark: #4a4a52; /* .btn-outline-light border */
+ 
+  /* ---- Color: accent ---- */
+  --color-accent:       #000;
+  --color-accent-dark:  #000000;
+  --color-accent-bg:    #eef0ff;
+ 
+  /* ---- Color: feedback ---- */
+  --color-success:        #16a34a;
+  --color-success-bright: #4ade80; /* security visual "ok" lines */
+  --color-error:          #dc2626;
+ 
+  /* ---- Radius ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+ 
+  /* ---- Shadow ---- */
+  --shadow-mockup: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --shadow-focus:  0 0 0 3px var(--color-accent-bg);
+ 
+  /* ---- Motion ---- */
+  --transition-fast: 0.15s ease;
+  --transition-slow: 0.6s ease;
+ 
+  /* ---- Spacing (used across sections/cards) ---- */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 20px;
+  --space-9: 24px;
+  --space-10: 28px;
+  --space-11: 32px;
+  --space-12: 40px;
+  --space-13: 48px;
+  --space-14: 56px;
+  --space-15: 64px;
+  --space-16: 72px;
+  --space-17: 96px;
+ 
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --nav-height: 72px;
+}
+
+body {
+  background-color: var(--color-accent-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Manrope", sans-serif;
+}
+
+
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+body.active{
+    overflow-y: hidden;
+}
+
+.alert{
+    position: fixed;
+    padding: var(--space-1) var(--space-4);
+    z-index: 33333333333333;
+    background-color: #ffffff;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: var(--radius-sm);
+    display: none;
+}
+.alert.active{
+    display: flex;
+}
+.message{
+    font-size: var(--space-6);
+    color: rgb(0, 0, 0);
+}
+.alert.error{
+    background-color: #ff0000;
+}
+
+/* admin dashboard section */
+.admin-dashbaord-section{
+    margin-top: 5rem;
+}
+.admin-dashboard-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    margin-block: var(--space-12);
+}
+
+
+.admin-dashboard-header{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    color: #ffffff;
+}
+.create-election-btn{
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    color: #000;
+    background-color: #ffffff;
+}
+
+
+.header-left{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+.header-left .admin-header-title{
+    font-size: clamp(2rem, 5vw + 1rem, 2.8rem);
+}
+
+.header-left .admin-dash-text{
+    font-size: clamp(0.7rem, 2vw + 0.5rem, 1.1rem);
+}
+
+
+
+/* dashboard mirrors section */
+
+.dasbaord-mirrors-col{
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+
+.dash-mirror{
+    background-color: #ffffff;
+    flex: 1;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-sm);
+}
+
+.dash-mirror .count{
+    color: #000;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+/* reponsiv for large screens */
+
+@media screen and (min-width: 768px) {
+    .admin-dashboard-header{
+        flex-direction: row;
+        gap: 0;
+        align-items: center;
+        justify-content: space-between;
+    };
+
+}
+
+
+/* working with election creation section */
+
+.overlay{
+  position: fixed; /* Sit on top of the page content */ /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+  z-index: 2222;
+  display:none;
+  align-items: center;
+  justify-content: center; /* Specify a stack order in case you're using a different order for other elements */
+}
+.overlay.active{
+    display: flex;
+}
+
+.modal{
+    background-color: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    padding: var(--space-8) var(--space-6);
+    border-radius: var(--radius-sm);
+    max-height: 500px;
+    overflow-y: auto;  
+    overflow-x: hidden;
+}
+
+
+.modal-content .header-model {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-8);
+}
+
+.header-model .election-title-text{
+    font-weight: bold;
+
+}
+
+.modal-action-btns{
+    display: flex;
+    gap: var(--space-4);
+}
+
+.modal-action-btns button {
+    border: none;
+    padding: var(--space-2) var(--space-6);
+    border-radius: var(--radius-sm);
+}
+.modal-popup-ask{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: var(--space-2) var(--space-6);
+}
+.modal-action-btns .no-btn{
+    background-color: #0d0d10;
+    color: #ffffff;
+}
+
+.modal-action-btns .yess-btn{
+    background-color: var(--color-error);
+    color: #ffffff;
+}
+.modal input{
+    width: 100%;
+    height: var(--space-12);
+    padding: var(--space-4);
+    border: none;
+    outline: 1px solid #000;
+    border-radius: var(--radius-sm);
+}
+
+.election-form .save-election{
+    width: 100%;
+    padding: var(--space-6) var(--space-10);
+    border: none;
+    outline: 1px solid #ffffff;
+    background-color: #000;
+    border-radius: var(--radius-sm);
+    color: #ffffff;
+}
+
+
+.election{
+    background-color: #ffffff;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    border-radius: var(--radius-sm);
+    width: 100%;
+    position: relative;
+}
+
+.election >  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+
+.election-container-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+
+
+.election-place-holder{
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--space-15);
+    border-radius: var(--radius-sm);
+    gap: var(--space-10);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 100%;
+}
+.election .election-header .election-status{
+    border: 1px solid #d9d9da;
+    width: fit-content;
+    border-radius: var(--radius-xl);
+    padding: var(--space-1) var(--space-6);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+.election-status.open{
+    background-color: #000;
+    color: #ffffff;
+}
+.election .election-header .election-status.closed {
+   background-color: var(--color-error);
+   border: #ffffff 1px solid;
+   color: #ffffff;
+}
+
+.election:has(.upcoming){
+    background-color: rgba(44, 44, 44, 0.8);
+    border-radius: var(--radius-md);
+    color: #efeeee;
+    border: 1px solid #4a4a52;
+}
+
+.election:has(.upcoming) .election-detail {
+    display: none;
+}
+
+.election:has(.closed){
+    background-color: #232222;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+
+
+.election-header .election-status.upcoming{
+    background-color: #000;
+    color: #ffffff;
+}
+#status-icon{
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
+.election-title{
+    font-weight: 600;
+    font-size: clamp(1.2rem, 2vw + 1rem, 2rem);
+}
+
+.election-detail{
+    display: flex;
+    gap: var(--space-4);
+    font-size: 0.9rem;
+}
+
+.election-control{
+    display: flex;
+    gap: var(--space-8);
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.modal > button {
+    width: calc(33.3% - 13.3px);
+}
+.el-btn{
+    border: none;
+    padding: var(--space-3) var(--space-10);
+    border-radius: var(--radius-xl);
+}
+.update-election {
+    border: none;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-xl);
+    margin: 0 auto;
+    background-color: #000;
+    color: #ffffff;
+}
+.delete-election{
+    background-color: var(--color-error);
+    color: #ffffff;
+}
+
+
+.edit-election{
+    border: 1px solid #8e8e90;
+    background-color: #ffffff;
+}
+
+
+
+
+/* candidat section  */
+
+.created-candidate-list{
+    display: flex;
+    gap: var(--space-4);
+
+}
+.candidate{
+    padding: var(--space-2);
+    color: #26262c;
+    background-color: #ffffff;
+    border-radius: 0.1rem;
+}
+.candidate-add{
+    width: 100%;
+    border: none;
+    padding: var(--space-6) var(--space-10);
+    border-radius: var(--radius-sm);
+    background: #000;
+    color: #ffffff;
+}
+
+.candidate-title{
+    font-weight: 600;
+}
+
+
+
+/* table css */
+
+
+.table-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.05),
+    0 12px 24px rgba(0,0,0,.05);
+     overflow-x: auto;
+}
+
+.candidate-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+table {
+    width: 100%;
+    min-width: 800px; /* prevents columns from becoming too narrow */
+    border-collapse: collapse;
+}
+
+.candidate-table thead {
+  background: #000;
+  color: #ffffffff;
+}
+
+.candidate-table th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: var(--space-4) var(--space-4);
+}
+
+.candidate-table td {
+  padding: var(--space-2) var(--space-4);  
+  color: #374151;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.candidate-table tbody tr {
+  transition: .3s;
+}
+
+.candidate-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn {
+  background: #000;
+  color: white;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  margin-left: 8px;
+}
+
+
+/* candidate || admin dashbaord */
+
+.created-candidate-list{
+    display: flex;
+    flex-direction: column;
+}
+.candidate-list-item{
+    margin-top: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #4a4a5243;
+    padding-bottom: var(--space-2);
+}
+
+.no-candidate{
+    margin-top: var(--space-6);
+    font-weight: 450;
+}
+
+@media screen and (min-width: 800px) {
+    .election{
+        width: calc(50% - 7px);
+    }
+}
+
+.view-result-container{
+    margin-top: var(--space-6);
+}
+
+.view-result-container{
+    display: none;
+}
+
+.election:has(.open) .view-result-container{
+  display: block;
+}

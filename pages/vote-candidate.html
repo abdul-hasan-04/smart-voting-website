@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vrum - vote-candidate page</title>
+    <link rel="stylesheet" href="../css/candidate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="candidate-page-container section container">
+        <div class="alert">
+            <p class="message"></p>
+        </div>
+         <div class="overlay">
+                <div class="modal">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
+           <div class="candidates-container container">
+        <div class="candidate-page-header">
+            <a href="./dashboard.html" class="back-to-dashbaord">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back-to-elections
+            </a>
+        </div>
+
+        <div class="voting-candidates-container">
+            <div class="vote-candidate">
+                <div class="candidate-body">
+                    <h1 class="current-ele-title">Student Class Leader Election</h1>
+                    <p class="current-ele-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, beatae. Voluptas placeat perspiciatis laboriosam aperiam?</p>
+                </div>
+            </div>
+        </div>
+        <div class="candidates-container">
+            <h2 class="list-title">Candidates List</h2>
+            <div class="candidates-list-container">
+        </div>
+        <button type="button" class="show-more-btn">Show More</button>
+        </div>
+    </div>
+    <script type="module" src="../js/voting-service.js"></script>
+</body>
+</html>

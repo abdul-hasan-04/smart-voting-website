@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbaord</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashbaord.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="dashboard-header container">
+            <a href="../index.html" class="logo">
+      <span class="logo-mark">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8.5L6 11.5L13 4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      Verum
+    </a>
+    <div class="user-profile">
+        <i class="fa-solid fa-bars" id="user-icon"></i>
+        <div class="user-detailed-info">
+        </div>
+    </div>
+        </nav>
+    </header>
+
+    <div class="election-section">
+        <div class="electionHeader container">
+            <h1 class="headerElection">Elections</h1>
+            <div class="filter">
+                <span class="all status active">All</span>
+                <span class="opene-elections status">Open</span>
+                <span class="up-coming-elections status">Upcoming</span>
+                <span class="closed-elections status">Closed</span>
+            </div>
+            <div class="electionList-container">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../js/dashboard.js"></script>
+</body>
+</html>

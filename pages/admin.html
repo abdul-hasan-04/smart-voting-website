@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashbaord.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="alert">
+            <p class="message"></p>
+        </div>
+        <nav class="dashboard-header container">
+            <a href="../index.html" class="logo">
+                <span class="logo-mark">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8.5L6 11.5L13 4.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                Verum
+            </a>
+            <div class="user-profile">
+                <i class="fa-solid fa-bars" id="user-icon"></i>
+                <div class="user-detailed-info">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="admin-dashbaord-section">
+        <div class="admin-dashboard-container container">
+            <div class="admin-dashboard-header">
+                <div class="header-left">
+                    <h2 class="admin-header-title">Admin dashboard</h2>
+                    <p class="admin-dash-text">Create elections, manage candidates, and review live results.</p>
+                </div>
+                <div class="create-Election">
+                    <button class="create-election-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="new-election">Create Election</span>
+                    </button>
+                </div>
+            </div>
+            <div class="dashbaord-mirrors-container">
+                <div class="dasbaord-mirrors-col">
+                    <div class="dash-mirror total-elections">
+                        <span class="total-election-count count">0</span>
+                        <p>Total Elections</p>
+                    </div>
+                    <div class="dash-mirror currently-open">
+                        <span class="currently-open-count count">0</span>
+                        <p>Currently Open</p>
+                    </div>
+                    <div class="dash-mirror total-candidates">
+                        <span class="total-candidate-count count">0</span>
+                        <p>Total Candidates</p>
+                    </div>
+                    <div class="dash-mirror total-votes">
+                        <span class="total-votes-count count">0</span>
+                        <p>Votes Cast</p>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay">
+                <div class="modal">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+            <div class="election-container-list">
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="image-container"></div>
+    <script type="module" src="../js/admin.js"></script>
+</body>
+
+</html>

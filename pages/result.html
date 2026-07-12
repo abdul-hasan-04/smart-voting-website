@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashbaord.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div class="alert">
+            <p class="message"></p>
+        </div>
+        <nav class="dashboard-header container">
+            <a href="../index.html" class="logo">
+                <span class="logo-mark">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8.5L6 11.5L13 4.5" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+                Verum
+            </a>
+        </nav>
+    </header>
+    <div class="admin-dashbaord-section">
+        <div class="current-path container">
+            <div class="link">
+                <a href="../pages/admin.html">Admin Dashboard /</a>
+                <a href="../pages/result.html">Result</a>
+            </div>
+        </div>
+        <div class="admin-dashboard-container container">
+            <div class="admin-dashboard-header">
+                <div class="header-left">
+                    <h2 class="admin-header-title">Admin dashboard</h2>
+                    <div class="title-icon">
+                        <p class="admin-dash-text">View Election Result</p>
+                         <i class="fa-solid fa-square-poll-vertical"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="dashbaord-mirrors-container">
+                <div class="dasbaord-mirrors-col">
+                    <div class="dash-mirror total-elections">
+                        <span class="total-votes-count count">0</span>
+                        <p>Total Votes</p>
+                    </div>
+                    <div class="dash-mirror total-candidates">
+                        <span class="total-candidate-count count">0</span>
+                        <p>Total Candidates</p>
+                    </div>
+                    <div class="dash-mirror total-votes">
+                        <span class="election-winner count">Abdullahi Mohamed</span>
+                        <p>Winner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="election-winner-card-container">
+            </div>
+            <div class="leader-board-container">
+                <div class="leader-board-card">
+                    <div class="title">
+                        <h2 class="leader-borad-title">Candidates Leaderboard Result</h2>
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+                    <div class="candidates-list-leader-board">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="module" src="../js/election-result.js"></script>
+</body>
+</html>
