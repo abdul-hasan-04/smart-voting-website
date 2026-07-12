@@ -67,8 +67,11 @@ const ErrorAlertMessage = (message) => {
 // redirect user from admin pages || authorization//
 
 let currentLiveUser = currentUser();
+
 let userProfilecontainer = document.querySelector(".user-profile");
 let userInfoElement = document.querySelector(".user-detailed-info");
+
+if(!currentLiveUser) location.href = "login.html";
 currentLiveUser.role == "user" ? (location.href = "dashboard.html") : "";
 
 let userIcon = document.querySelector("#user-icon");

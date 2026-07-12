@@ -30,7 +30,6 @@ demoUsers.forEach(d => {
 
 
 
-
 export function register (name,email,password,confirmPassowrd) {
    const isExist = users.find(user => user.email == email);
    if(!password === confirmPassowrd){
