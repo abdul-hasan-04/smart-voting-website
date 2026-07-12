@@ -8,13 +8,28 @@
 import {currentUser} from "./js/auth.js";
 
 let profileCard = document.querySelector(".profile-card");
-
-
+let userIcon = document.querySelector("#user-icon");
+let authBtns = document.querySelector(".toggle-user-active");
 
 const userProfileUi = () => {
-  if(currentUser()) {
-    document.querySelector(".toggle-user-active").innerHTML = `<i class="fa-solid fa-circle-user" id="user-icon"></i>`;
-    profileCard.innerHTML = `
+ if (currentUser()) {
+    userIcon.classList.add("active");
+    authBtns.classList.remove("show");
+} else {
+    userIcon.classList.remove("active");
+    authBtns.classList.add("show");
+}
+
+}
+
+
+userProfileUi();
+
+
+const displayProfileCard = () => {
+  if(!currentUser()) return;
+document.querySelector(".profile-card").classList.toggle("active");
+ profileCard.innerHTML = `
     <div class="profile-header">
     <i class="fa-solid fa-user"></i>
     <div class="profile-info">
@@ -40,37 +55,29 @@ const userProfileUi = () => {
        
         
         `
-      }else{
-        document.querySelector(".toggle-user-active").innerHTML = `
-        <a href="./pages/login.html" class="btn btn-secondary btn-sm">Log in</a>
-      <a href="./pages/register.html" class="btn btn-primary btn-sm">Register</a>
-      `
-    }
 }
-
-
-
-userProfileUi();
-
-
-
-
 
 window.onclick = (e) => {
   let logoutBtn = e.target.closest(".logout-btn");
   let userIcon = document.querySelector("#user-icon");
+  let menu = document.querySelector(".menu");
   
   if(logoutBtn) {
     sessionStorage.removeItem("currentUser");
       userProfileUi();
     }
     
-  if(userIcon){
+
     if(userIcon){
       document.body.classList.toggle("hide-scroll");
-     document.querySelector(".profile-card").classList.toggle("active");
+      displayProfileCard();
     }
-  }
+
+    if(menu){
+      location.href = `${currentUser().role === "admin" ? "admin.html" : "dashboard.html"}`;
+    }
+
+
 }
 
 
@@ -242,5 +249,3 @@ demoForms.forEach(function (form) {
 
 
 
-
-document.addEventListener("DOMContentLoaded", userProfileUi);

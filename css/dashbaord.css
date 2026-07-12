@@ -196,11 +196,11 @@ header{
   padding: var(--space-1) var(--space-4);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   cursor: pointer;
-  color: #000000;
+  color: #1B4EF5;
 }
 
 .status.active{
-  background-color: #000000;
+  background-color: #1B4EF5;
   color: #ffffff;
 }
 
@@ -299,7 +299,7 @@ h1{
 }
 
 .election-status.open{
-  background-color: #000000;
+  background-color: #1B4EF5;
   color: #ffffff;
 }
 .election-status.close{
@@ -307,7 +307,7 @@ h1{
   color: #ffffff;
 }
 .election-status.upcoming{
-  background-color: #000000;
+  background-color: #1B4EF5;
   color: #ffffff;
 }
 
@@ -386,7 +386,7 @@ h1{
 
 .Election:has(.open){
   background-color: #ffffff;
-  color: #000000;
+  color: #1B4EF5;
 }
 
 @media screen and (min-width: 800px) {

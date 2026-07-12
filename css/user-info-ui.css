@@ -76,6 +76,23 @@ body.hide-scroll {
 }
 
 
+#user-icon{
+    display: none;
+}
+
+.toggle-user-active{
+    display: none;
+}
+
+#user-icon.active{
+    display: block;
+}
+
+.toggle-user-active.show{
+    display: flex;
+}
+
+
 .profile-info h3{
     color:#222;
     margin-bottom:6px;

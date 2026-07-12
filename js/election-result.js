@@ -83,7 +83,7 @@ const seesWinnerOfElection = () => {
                             <span class="el-name">${getAllElections().find(el => el.id == currentElectionId).elTitle}</span>
                         </div>
                         <div class="vote-count-ui">
-                            <span class="vote-count"><strong>${result.voteCount} votes</strong></span>
+                            <span class="vote-count"><strong>${result.voteCount} ${result.voteCount > 1 ? "votes" : "vote"}</strong></span>
                             <span class="vote-percentage"><strong>${percentageWinning.toFixed(1)}%</strong></span>
                         </div>
                         <div class="win-progrsess">

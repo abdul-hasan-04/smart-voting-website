@@ -14,29 +14,9 @@ let userProfilecontainer = document.querySelector(".user-profile");
 let electionsContainerParent = document.querySelector(".electionList-container");
 
 
-userIcon.addEventListener("click", () => {
-    document.querySelector(".user-detailed-info").classList.toggle("active");
-});
 
 
-userProfilecontainer.addEventListener("click", (e) =>{
-    let logoutBtn = e.target.closest("#logoutIcon");
-    if(logoutBtn){
-        sessionStorage.removeItem("currentUser");
-        location.href = "login.html";
-    }
-})
   
-const createUserInfo = liveUserData => {
-    let userDetailedElement = document.querySelector(".user-detailed-info");
-    userDetailedElement.innerHTML = `
-    
-    
-    `
-}
-
-
-createUserInfo(currentUser());
 
 
 
@@ -55,6 +35,12 @@ const filterElectionsToAll = () => {
 
 const filterElectionToOpen = () => {
     let openCurrentElections = getAllElections().filter(el => el.status == "open");
+
+    if(openCurrentElections.length < 1){
+        electionsContainerParent.innerHTML = "there are no elections currently open.";
+        return;
+    }
+
      electionsContainerParent.innerHTML = ""
     openCurrentElections.forEach(element => {
         renderElections(element)
@@ -64,6 +50,10 @@ const filterElectionToOpen = () => {
 
 const filterElectionsToClosed = () => {
     let closedCurrentElections = getAllElections().filter(el => el.status == "closed");
+    if(closedCurrentElections.length < 1){
+        electionsContainerParent.innerHTML = "There are no elections closed.";
+        return;
+    }
      electionsContainerParent.innerHTML = ""
     closedCurrentElections.forEach(element => {
         renderElections(element)
@@ -73,6 +63,11 @@ const filterElectionsToClosed = () => {
 
 const filterElectionsToUpcoming = () => {
     let upcomingCurrentElections = getAllElections().filter(el => el.status == "upcoming");
+     if(upcomingCurrentElections.length < 1){
+        electionsContainerParent.innerHTML = "There are no coming elections.";
+        return;
+    }
+
      electionsContainerParent.innerHTML = ""
     upcomingCurrentElections.forEach(element => {
         renderElections(element)
@@ -85,21 +80,16 @@ const filterElectionsToUpcoming = () => {
         element.classList.add("active");
 
         if(element.textContent === "All"){
-            console.log(element.textContent);
-            
             filterElectionsToAll();
             
         }
         if(element.textContent === "Open"){
-            console.log(element.textContent);
             filterElectionToOpen();
         }
         if(element.textContent === "Closed"){
-            console.log(element.textContent);
             filterElectionsToClosed();
         }
         if(element.textContent === "Upcoming"){
-            console.log(element.textContent);
             filterElectionsToUpcoming();
         }
     })

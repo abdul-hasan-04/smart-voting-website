@@ -36,7 +36,7 @@ html {
  
   /* ---- Color: accent ---- */
   --color-accent:       #000;
-  --color-accent-dark:  #000000;
+  --color-accent-dark:  #1B4EF5;
   --color-accent-bg:    #eef0ff;
  
   /* ---- Color: feedback ---- */
@@ -224,7 +224,7 @@ body.active{
 
 
 .election-winner-card img {
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     border-radius: var(--radius-md);
 }
@@ -257,7 +257,7 @@ body.active{
 
 .progress-load{
     height: 100%;
-    background-color: #000000;
+    background-color: #1B4EF5;
     border-radius: 2.5rem;
 }
 
@@ -284,7 +284,7 @@ body.active{
 }
 
 .leader-board-card{
-    background-color: #141313de;
+    background-color: #1B4EF5;
     color: #ffffff;
     padding: var(--space-12);
     border-radius: var(--radius-md);
