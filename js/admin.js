@@ -9,6 +9,8 @@ import { getAllVotes } from "./votes.js";
 
 if (!currentUser() || currentUser().role !== "admin") {
     window.location.replace("login.html");
+}else {
+    document.body.classList.remove("hidden");
 }
 
 let electionCreationBtn = document.querySelector(".create-election-btn");

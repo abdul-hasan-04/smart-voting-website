@@ -114,6 +114,10 @@ body.active{
     overflow-y: hidden;
 }
 
+body.hide{
+    display: none;
+}
+
 .alert{
     position: fixed;
     padding: var(--space-1) var(--space-4);
