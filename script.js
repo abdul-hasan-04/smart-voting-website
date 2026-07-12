@@ -74,7 +74,7 @@ window.onclick = (e) => {
     }
 
     if(menu){
-      location.href = `${currentUser().role === "admin" ? "admin.html" : "dashboard.html"}`;
+      location.href = `${currentUser().role === "admin" ? "./pages/admin.html" : "./pages/dashboard.html"}`;
     }
 
 
